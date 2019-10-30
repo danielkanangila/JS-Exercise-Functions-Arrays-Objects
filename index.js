@@ -100,7 +100,7 @@ function makeSmartPerson(name) {
  * it will return `This is a Lincoln Navigator`.
  */
 function getCarInfoByIndex(cars, index) {
-    return `This is a card ${cars[index].car_make} ${cars[index].car_model}`;
+    return `This is a ${cars[index].car_make} ${cars[index].car_model}`;
 }
 
 /**
@@ -114,8 +114,9 @@ function getCarInfoByIndex(cars, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
  */
-function getLastCarInfo( /* code here */ ) {
-    /* code here */
+function getLastCarInfo(cars) {
+    let lastIndex = cars.length - 1;
+    return `This is a ${cars[lastIndex].car_make} ${cars[lastIndex].car_model}`;
 }
 
 /**
