@@ -99,8 +99,8 @@ function makeSmartPerson(name) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
  */
-function getCarInfoByIndex(cars, index) {
-    return `This is a ${cars[index].car_make} ${cars[index].car_model}`;
+function getCarInfoByIndex(invetory, index) {
+    return `This is a ${invetory[index].car_make} ${invetory[index].car_model}`;
 }
 
 /**
@@ -114,9 +114,9 @@ function getCarInfoByIndex(cars, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
  */
-function getLastCarInfo(cars) {
-    let lastIndex = cars.length - 1;
-    return `This is a ${cars[lastIndex].car_make} ${cars[lastIndex].car_model}`;
+function getLastCarInfo(inventoryinvetory) {
+    let lastIndex = inventoryinvetory.length - 1;
+    return `This is a ${inventoryinvetory[lastIndex].car_make} ${inventoryinvetory[lastIndex].car_model}`;
 }
 
 /**
@@ -131,10 +131,10 @@ function getLastCarInfo(cars) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
  */
-function getCarInfoById(cars, id) {
-    for (let i = 0; i < cars.length; i++) {
-        if (cars[i].id === id) {
-            return `This is a ${cars[i].car_make} ${cars[i].car_model}`;
+function getCarInfoById(inventory, id) {
+    for (let i = 0; i < inventory.length; i++) {
+        if (inventory[i].id === id) {
+            return `This is a ${inventory[i].car_make} ${inventory[i].car_model}`;
         }
     }
 }
@@ -147,8 +147,8 @@ function getCarInfoById(cars, id) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
  */
-function sortCarInventory(cars) {
-    return cars.sort((a, b) => {
+function sortCarInventory(inventory) {
+    return inventory.sort((a, b) => {
         let x = a.car_model.toLowerCase();
         let y = b.car_model.toLowerCase();
         if (x < y) { return -1; }
@@ -166,10 +166,10 @@ function sortCarInventory(cars) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
  */
-function getModelYears(cars) {
+function getModelYears(inventory) {
     let car_years = [];
-    for (let i = 0; i < cars.length; i++) {
-        car_years.push(cars[i].car_year);
+    for (let i = 0; i < inventory.length; i++) {
+        car_years.push(inventory[i].car_year);
     }
 
     return car_years;
@@ -187,13 +187,13 @@ function getModelYears(cars) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
  */
-function getOlderCars(cars, max_year) {
+function getOlderCars(inventory, max_year) {
     let olderCars = []
 
     // get to max_year
-    for (let i = 0; i < cars.length; i++) {
-        if (cars[i].car_year <= max_year) {
-            olderCars.push(cars[i]);
+    for (let i = 0; i < inventory.length; i++) {
+        if (inventory[i].car_year <= max_year) {
+            olderCars.push(inventory[i]);
         }
 
     }
@@ -212,7 +212,7 @@ function getOlderCars(cars, max_year) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
  */
-function getGermanCars( /* code here */ ) {
+function getGermanCars(inventory) {
     /* code here */
 }
 
