@@ -37,8 +37,12 @@ function exampleFunction(num1, num2) {
  *   email: "leia@leia.com",
  * }
  */
-function makePersonObject( /* code here */ ) {
-    /* code here */
+function makePersonObject(id, name, email) {
+    return {
+        id: id,
+        name: name,
+        email: email
+    };
 }
 
 /**
