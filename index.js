@@ -253,15 +253,9 @@ function getGermanCars(inventory) {
  *   return num * 2
  * }
  */
-const sum = (a, b) => {
-    return a + b;
-};
-const addFive = num => {
-    return num + 5;
-};
-const argTimesTwo = num => {
-    return num * 2;
-};
+const sum = (a, b) => a + b;
+const addFive = num => num + 5;
+const argTimesTwo = num => num * 2;
 
 /**
  * ### Challenge `carMaker`
@@ -277,10 +271,14 @@ const argTimesTwo = num => {
  *         (2) returns the updated value of the `odometer`.
  */
 function carMaker(odometer) {
-    this.odometer = odometer;
-    this.drive = distance => this.odometer += distance;
+    const _carMaker = {
+        odometer: odometer,
+        drive: function(distance) {
+            return this.odometer += distance;
+        }
+    }
 
-    return this;
+    return _carMaker;
 }
 
 /// ////// END OF CHALLENGE /////////
